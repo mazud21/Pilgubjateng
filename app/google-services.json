@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1059217531766",
+    "firebase_url": "https://pilgubjateng-1a4b6.firebaseio.com",
+    "project_id": "pilgubjateng-1a4b6",
+    "storage_bucket": "pilgubjateng-1a4b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059217531766:android:cc250fe4657e8fbf",
+        "android_client_info": {
+          "package_name": "com.pilgubjateng.battistrada.pilgubjateng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059217531766-hleao16fqpei51lqmi560f4che36lor7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pilgubjateng.battistrada.pilgubjateng",
+            "certificate_hash": "73194acc17702f8cda2069b573c2abf0d3d27ef8"
+          }
+        },
+        {
+          "client_id": "1059217531766-0rop4m787e3ca890dgpd0v2oltivbjpd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_5UCuzcvB0SQHvDO5uIzWSsB8woI_Ov8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059217531766-0rop4m787e3ca890dgpd0v2oltivbjpd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
