@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Isu extends AppCompatActivity {
+public class Aspirasi extends AppCompatActivity {
 
     Button btnkirim,btnreset;
     EditText nama,email,pesan;
@@ -17,7 +17,7 @@ public class Isu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_isu);
+        setContentView(R.layout.activity_aspirasi);
 
         final Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -3,66 +3,180 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_profile"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Profile">
 
-    <TextView
-        android:id="@+id/txtProfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DASHBOARD PROFIL"
-        android:textStyle="bold"/>
-
-    <android.support.design.widget.TextInputLayout
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="87dp"
-        android:gravity="center">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <EditText
-            android:id="@+id/edit_password_profile"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearIsi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/calon" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/img_profile"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="NIK"
+                            android:text="Data Diri"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvNIKProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="NIK"
+                            android:text=""
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tvNamaProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nama"
+                            android:text=""
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tvEmailProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:text=""
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_edit_white"
+                    android:layout_marginBottom="56dp"/>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtProfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DASHBOARD PROFIL"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="Enter New Password"
-            android:inputType="textPassword"
-            android:maxLines="1" />
+            android:layout_marginEnd="87dp"
+            android:gravity="center">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/edit_password_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="Enter New Password"
+                android:inputType="textPassword"
+                android:maxLines="1" />
 
-    <Button
-        android:id="@+id/btnChange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change"
-        style="@style/Widget.AppCompat.Button.Colored"
-        />
+        </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:textStyle="bold"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        />
+        <Button
+            android:id="@+id/btnChange"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change" />
 
-    <!--Button
-        android:id="@+id/btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DELETE"
-        android:textStyle="bold"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        /-->
+        <Button
+            android:id="@+id/btnLogout"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textStyle="bold" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="20dp"
-        android:visibility="gone" />
+        <!--Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DELETE"
+            android:textStyle="bold"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            /-->
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/bottom_nav_main"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
 </LinearLayout>

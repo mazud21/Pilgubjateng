@@ -21,19 +21,21 @@
         <activity android:name=".CaraMemilih" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".Isu"
+            android:name=".Aspirasi"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".InfoLanjut" />
         <activity
             android:name=".Calon"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".News"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".NewsDetails" />
         <activity android:name=".Vote" />
         <activity android:name=".Splash" />
-        <activity android:name=".Profile" />
+        <activity
+            android:name=".Profile"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".SignIn" />
         <activity android:name=".SignUp" />
         <activity android:name=".ForgotPass" />
