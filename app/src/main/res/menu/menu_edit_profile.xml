@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/edit_data"
+        android:title="Ubah Data Diri"/>
+    <item
+        android:id="@+id/edit_password"
+        android:title="Ubah Password"/>
+</menu>

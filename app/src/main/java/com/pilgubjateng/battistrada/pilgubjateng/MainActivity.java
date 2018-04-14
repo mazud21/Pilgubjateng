@@ -10,7 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     //Button buttonVote;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
+
+    private FirebaseAuth auth;
+    private FirebaseUser user;
 
     @Override
     public void onBackPressed() {
@@ -36,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav);
+        final BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav);
 
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -46,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         imageView3 = (ImageView) findViewById(R.id.issue);
         imageView4 = (ImageView) findViewById(R.id.ask);
         //buttonVote = (Button)findViewById(R.id.btnVote);
+
+        //init
+        auth = FirebaseAuth.getInstance();
 
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,15 +102,43 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         startActivity(intent);
                         break;
+
                     case R.id.date:
                         //datePicker
                         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
                         showDateDialog();
 
                         break;
-                    case R.id.profile:
-                        Intent intentProfile = new Intent(MainActivity.this, Profile.class);
-                        startActivity(intentProfile);
+                    case R.id.more:
+                        PopupMenu popup = new PopupMenu(MainActivity.this, bottomNavigationView.findViewById(R.id.more));
+                        // Inflating menu using xml file
+                        popup.getMenuInflater().inflate(R.menu.menu_more, popup.getMenu());
+                        // registering OnMenuItemClickListener
+                        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                            public boolean onMenuItemClick(MenuItem item) {
+                                switch (item.getItemId()){
+                                    case R.id.profile_more:
+                                        Intent intentProfile = new Intent(MainActivity.this, Profile.class);
+                                        startActivity(intentProfile);
+                                        break;
+                                    case R.id.about_more:
+                                        Intent intentAbout = new Intent(MainActivity.this, About.class);
+                                        startActivity(intentAbout);
+                                        break;
+                                    case R.id.logout_more:
+                                        auth.signOut();
+                                        if (auth.getCurrentUser() == null) {
+                                            startActivity(new Intent(MainActivity.this, SignIn.class));
+                                            finish();
+                                        }
+                                        break;
+                                }
+                                return true;
+                            }
+                        });
+                        popup.show();
+                        //Intent intentProfile = new Intent(MainActivity.this, Profile.class);
+                        //startActivity(intentProfile);
                         break;
                 }
                 return true;

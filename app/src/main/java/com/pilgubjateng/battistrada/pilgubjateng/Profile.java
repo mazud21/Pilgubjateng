@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,7 +66,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         txtProfile = (TextView) findViewById(R.id.tvEmailProfile);
         editPass = (EditText) findViewById(R.id.edit_password_profile);
         btnChange = (Button) findViewById(R.id.btnChange);
-        btnLogout = (Button) findViewById(R.id.btnLogout);
         //btnDelete = (Button) findViewById(R.id.btnDelete);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -73,10 +73,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
 
         fabEdit = (FloatingActionButton) findViewById(R.id.fab_edit);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav);
-
-        btnChange.setOnClickListener(this);
-        btnLogout.setOnClickListener(this);
         //btnDelete.setOnClickListener(this);
 
         //init
@@ -90,81 +86,40 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         fabEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Dialog dialog = new Dialog(Profile.this);
-                dialog.setContentView(R.layout.dialog_edit_view);
-                dialog.setTitle("Pilih Aksi");
-                dialog.show();
+                PopupMenu popup = new PopupMenu(Profile.this,fabEdit);
+                // Inflating menu using xml file
+                popup.getMenuInflater().inflate(R.menu.menu_edit_profile, popup.getMenu());
+                // registering OnMenuItemClickListener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()){
+                            case R.id.edit_data:
+                                /*
+                                PopupMenu popup = new PopupMenu(Profile.this,fabEdit);
 
-                //final Dialog dialog2 = new Dialog(context);
-                //dialog2.setContentView(R.layout.layout_confirm);
-                //dialog2.setTitle("Are you sure want to DELETE Data" + daftarBarang);
-            }
-        });
-
-        //menampilkan bottom nav
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.act_home:
-                        Intent intentHome = new Intent(Profile.this, MainActivity.class);
-                        startActivity(intentHome);
-                        break;
-                    case R.id.date:
-                        //datePicker
-                        dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
-                        showDateDialog();
-
-                        break;
-                    case R.id.profile:
-                        Intent intentProfile = new Intent(Profile.this, Profile.class);
-                        startActivity(intentProfile);
-                        break;
-                }
-                return true;
+                                // Inflating menu using xml file
+                                popup.getMenuInflater().inflate(R.menu.menu_edit_profile, popup.getMenu());
+                                */
+                                //Intent intentChData = new Intent(Profile.this, ChangeData.class);
+                                //startActivity(intentChData);
+                                break;
+                            case R.id.edit_password:
+                                Intent intentChPass = new Intent(Profile.this, ChangePassword.class);
+                                startActivity(intentChPass);
+                                break;
+                        }
+                        return true;
+                    }
+                });
+                popup.show();
             }
         });
     }
-
-    //datepicker class
-    private void showDateDialog() {
-
-        //to get current date
-        Calendar newCalendar = Calendar.getInstance();
-
-        //inisialisasi date daialog
-        datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
-                //Method ini dipanggil saat kita selesai memilih tanggal di DatePicker
-                Calendar newDate = Calendar.getInstance();
-                //Set Calendar untuk menampung tanggal yang dipilih
-                newDate.set(year, monthOfYear, dayOfMonth);
-
-                //Update TextView dengan tanggal yang kita pilih
-                //tvDateResult.setText("Tanggal dipilih : "+dateFormatter.format(newDate.getTime()));
-            }
-
-        }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-
-        datePickerDialog.show();
-    }
-
 
     @Override
     public void onBackPressed() {
         startActivity(new Intent(Profile.this, MainActivity.class));
         finish();
-    }
-
-    private void logoutUser() {
-        auth.signOut();
-        if (auth.getCurrentUser() == null) {
-            startActivity(new Intent(Profile.this, SignIn.class));
-            finish();
-        }
     }
 
     /*
@@ -175,9 +130,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btnLogout) {
-            logoutUser();
-        }
+
         String password = editPass.getText().toString().trim();
         if (v.getId() == R.id.btnChange){
             if (TextUtils.isEmpty(password)) {

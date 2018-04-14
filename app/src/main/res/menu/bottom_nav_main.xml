@@ -16,7 +16,7 @@
         android:title="Kalender"
         app1:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/profile"
+        android:id="@+id/more"
         android:enabled="true"
         android:icon="@drawable/ic_more_vert_black_24dp"
         android:title="Profile"
