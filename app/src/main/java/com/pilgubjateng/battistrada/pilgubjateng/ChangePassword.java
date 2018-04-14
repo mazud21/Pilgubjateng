@@ -71,6 +71,7 @@ public class ChangePassword extends AppCompatActivity{
                                             Toast.makeText(ChangePassword.this, "Failed to Change Password", Toast.LENGTH_LONG).show();
                                         } else {
                                             Toast.makeText(ChangePassword.this, "Password Changed !", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(ChangePassword.this, Profile.class));
                                         }
                                         progressBar.setVisibility(View.GONE);
                                     }
@@ -79,5 +80,9 @@ public class ChangePassword extends AppCompatActivity{
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+
     }
 }

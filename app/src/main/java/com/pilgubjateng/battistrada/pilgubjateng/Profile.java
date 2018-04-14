@@ -1,12 +1,10 @@
 package com.pilgubjateng.battistrada.pilgubjateng;
 
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +13,6 @@ import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
@@ -29,8 +26,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
 
 public class Profile extends AppCompatActivity implements View.OnClickListener {
 
@@ -104,7 +99,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                                 //startActivity(intentChData);
                                 break;
                             case R.id.edit_password:
-                                Intent intentChPass = new Intent(Profile.this, ChangePassword.class);
+                                Intent intentChPass = new Intent(Profile.this, ValidateChangePassword.class);
                                 startActivity(intentChPass);
                                 break;
                         }
