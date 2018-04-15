@@ -4,10 +4,6 @@
     <color name="colorPrimaryDark">#ba4c00</color>
     <color name="colorAccent">#1976d2</color>
 
-    <color name="bg_screen1">#800000</color>
-    <color name="bg_screen2">#006400</color>
-    <color name="bg_screen3">#008B8B</color>
-    <color name="bg_screen4">#8A2BE2</color>
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#FFFFF0</color>
     <color name="dot_dark_screen2">#FFFFF0</color>

@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ValidateChangePassword extends AppCompatActivity implements View.OnClickListener{
 
     Button btnLogin;
-    EditText inputEmail, inputPass;
+    EditText inputEmail, inputPass, loginEmail;
     CheckBox checkBox;
 
     LinearLayout activity_sign_in;
@@ -45,6 +45,7 @@ public class ValidateChangePassword extends AppCompatActivity implements View.On
         btnLogin = (Button) findViewById(R.id.btnLogin);
         inputEmail = (EditText) findViewById(R.id.loginEmail);
         inputPass = (EditText) findViewById(R.id.password_login);
+        loginEmail = (EditText) findViewById(R.id.loginEmail);
 
         checkBox = (CheckBox) findViewById(R.id.checkbox1);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -67,6 +68,9 @@ public class ValidateChangePassword extends AppCompatActivity implements View.On
             }
         });
 
+        if (auth.getCurrentUser() != null) {
+            loginEmail.setText(auth.getCurrentUser().getEmail());
+        }
         /*Check if already session, if->true=> Main Program
         if (auth.getCurrentUser() != null) {
             startActivity(new Intent(ValidateChangePassword.this, MainActivity.class));
@@ -81,7 +85,7 @@ public class ValidateChangePassword extends AppCompatActivity implements View.On
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnLogin) {
-            String email = inputEmail.getText().toString().trim();
+            String email = auth.getCurrentUser().getEmail();
             String password = inputPass.getText().toString().trim();
             if (TextUtils.isEmpty(email)) {
                 Toast.makeText(getApplication(), "Enter your registered email id", Toast.LENGTH_SHORT).show();

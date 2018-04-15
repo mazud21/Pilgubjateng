@@ -20,8 +20,12 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.pilgubjateng.battistrada.pilgubjateng.model.UserModel;
 
 public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,10 +34,12 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
     TextView btnSignUp, btnForgot;
     CheckBox checkBox;
 
-    LinearLayout activity_sign_in;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
-    Toast toast;
-    Snackbar snackbar;
+    private UserModel userModel;
+
+    LinearLayout activity_sign_in;
     ProgressBar progressBar;
 
     private FirebaseAuth auth;
@@ -60,6 +66,11 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
         //init
         auth = FirebaseAuth.getInstance();
+
+        userModel = new UserModel();
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("user");
 
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -95,18 +106,18 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
             String email = inputEmail.getText().toString().trim();
             String password = inputPass.getText().toString().trim();
             if (TextUtils.isEmpty(email)) {
-                Toast.makeText(getApplication(), "Enter your registered email id", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplication(), "Masukkan Email yang sudah terdaftar", Toast.LENGTH_SHORT).show();
 
-            }else if (TextUtils.isEmpty(password)) {
-                Toast.makeText(getApplication(), "Enter your Password", Toast.LENGTH_SHORT).show();
+            } else if (TextUtils.isEmpty(password)) {
+                Toast.makeText(getApplication(), "Masukkan Password", Toast.LENGTH_SHORT).show();
 
-            }else if (TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
+            } else if (TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
                 Toast.makeText(getApplication(), "Email dan Password masih kosong", Toast.LENGTH_SHORT).show();
 
-            }else if (password.length() <=7 ) {
+            } else if (password.length() <= 7) {
                 Toast.makeText(getApplication(), "Password minimal 8 huruf", Toast.LENGTH_SHORT).show();
 
-            }else {
+            } else {
                 loginUser(inputEmail.getText().toString(), inputPass.getText().toString());
             }
         }
@@ -118,15 +129,15 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(!task.isSuccessful()){
+                        if (!task.isSuccessful()) {
                             progressBar.setVisibility(View.VISIBLE);
                             Toast.makeText(getApplication(), "Email atau Password yang anda masukkan salah", Toast.LENGTH_LONG).show();
-                        }else {
+                        } else {
                             progressBar.setVisibility(View.VISIBLE);
                             startActivity(new Intent(SignIn.this, MainActivity.class));
-                            }
-                        progressBar.setVisibility(View.GONE);
                         }
+                        progressBar.setVisibility(View.GONE);
+                    }
                 });
     }
 }

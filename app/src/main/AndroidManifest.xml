@@ -69,7 +69,8 @@
         <activity
             android:name=".ChangePassword"
             android:screenOrientation="portrait" />
-        <activity android:name=".ValidateChangePassword"></activity>
+        <activity android:name=".ValidateChangePassword" />
+        <activity android:name=".EditProfile"></activity>
     </application>
 
 </manifest>

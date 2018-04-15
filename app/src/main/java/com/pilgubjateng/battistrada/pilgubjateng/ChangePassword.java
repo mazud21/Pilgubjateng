@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class ChangePassword extends AppCompatActivity{
+public class ChangePassword extends AppCompatActivity {
 
     private TextView textView;
     private EditText editPass;
@@ -49,7 +49,7 @@ public class ChangePassword extends AppCompatActivity{
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-            textView.setText("Welcome " + auth.getCurrentUser().getEmail());
+            textView.setText(auth.getCurrentUser().getEmail());
         }
 
         btnChange.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +58,9 @@ public class ChangePassword extends AppCompatActivity{
                 progressBar.setVisibility(View.VISIBLE);
                 String password = editPass.getText().toString().trim();
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplication(), "Enter your new Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplication(), "Masukkan Password Baru", Toast.LENGTH_SHORT).show();
+                } else if (password.length() <= 7) {
+                    Toast.makeText(getApplication(), "Password minimal 8 huruf", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 } else {
                     user = auth.getCurrentUser();
@@ -68,9 +70,9 @@ public class ChangePassword extends AppCompatActivity{
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (!task.isSuccessful()) {
-                                            Toast.makeText(ChangePassword.this, "Failed to Change Password", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(ChangePassword.this, "Gagal mengubah Password", Toast.LENGTH_LONG).show();
                                         } else {
-                                            Toast.makeText(ChangePassword.this, "Password Changed !", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(ChangePassword.this, "Password Berhasil diubah !", Toast.LENGTH_LONG).show();
                                             startActivity(new Intent(ChangePassword.this, Profile.class));
                                         }
                                         progressBar.setVisibility(View.GONE);
@@ -81,6 +83,7 @@ public class ChangePassword extends AppCompatActivity{
             }
         });
     }
+
     @Override
     public void onBackPressed() {
 
