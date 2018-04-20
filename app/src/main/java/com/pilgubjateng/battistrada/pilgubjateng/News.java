@@ -94,7 +94,7 @@ public class News extends AppCompatActivity {
     }
 
     private void setupSlider() {
-        sliderView.setDurationScroll(800);
+        sliderView.setDurationScroll(SliderView.DEFAULT_SCROLL_DURATION);
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(FragmentSlider.newInstance("http://www.kpu.go.id/./application/modules/post/images/c36f54c1a0c399851b90938249e4d890.jpg"));
         fragments.add(FragmentSlider.newInstance("http://www.kpu.go.id/./application/modules/post/images/2b75b28bbec51ce56d16d4f4791c7690.jpg"));

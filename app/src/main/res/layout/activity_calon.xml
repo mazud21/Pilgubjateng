@@ -58,22 +58,6 @@
                 android:icon="@drawable/calon"
                 />
 
-            <android.support.design.widget.TabItem
-                android:id="@+id/tabItem3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="3"
-                android:icon="@drawable/calon"
-                />
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/tabItem4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="4"
-                android:icon="@drawable/calon"
-                />
-
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 

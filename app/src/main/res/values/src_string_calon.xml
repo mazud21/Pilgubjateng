@@ -1,0 +1,52 @@
+<resources>
+    <!--cagub & cawagub-->
+    <string name="ganjar">H. Ganjar Pranowo, S.H., M.IP.</string>
+    <string name="taj">H. Taj Yasin Maimoen</string>
+    <string name="sudirman">Sudirman Said</string>
+    <string name="ida">Dra. Hj. Ida Fauziah</string>
+    <!--end cagub & cawagub-->
+
+    <!--Ganjar-->
+    <string name="ttl_ganjar">Karanganyar, 28 Oktober 1968</string>
+    <string name="agama_ganjar">Islam</string>
+    <string name="pendidikan_ganjar">Fakultas Hukum Universitas Gadjah Mada</string>
+    <string name="track_record_ganjar">
+        Anggota DPR RI Periode 2004-2009(Pengganti Antar Waktu),
+        Anggota DPR RI Periode 2009-2014,
+        Gubernur Jawa Tengah Periode
+    </string>
+    <!--end Ganjar-->
+
+    <!--Taj Yasin-->
+    <string name="ttl_taj">Rembang, 1983</string>
+    <string name="agama_taj">Islam</string>
+    <string name="pendidikan_taj">Pelajar Islam Indonesia, Damaskus</string>
+    <string name="track_record_taj">
+        Anggota DPRD Jawa Tengah,
+        Ketua GP ANSHOR Jawa Tengah
+    </string>
+    <!--end Taj Yasin-->
+
+    <!--Sudirman-->
+    <string name="ttl_sudirman">Brebes, 16 April 1963</string>
+    <string name="agama_sudirman">Islam</string>
+    <string name="pendidikan_sudirman">Master Bidang Administrasi Bisnis, George Washington University</string>
+    <string name="track_record_sudirman">
+        Executive Director APEC CEO Summit 2013,
+        Direktur Utama PT Pindad,
+        Menteri ESDM.
+    </string>
+    <!--end Sudirman-->
+
+    <!--Ida-->
+    <string name="ttl_ida">Mojokerto, 16 Juli 1969</string>
+    <string name="agama_ida">Islam</string>
+    <string name="pendidikan_ida">Ilmu Pemerintahan, Universitas Satyagama</string>
+    <string name="track_record_ida">
+        Anggota DPR RI Periode 2014-2019,
+        Ketua Fraksi Partai Kebangkitan Bangsa DPR RI,
+        Wakil Ketua Badan Legislasi dan anggota Komisi II DPR
+    </string>
+    <!--end Ida-->
+
+</resources>

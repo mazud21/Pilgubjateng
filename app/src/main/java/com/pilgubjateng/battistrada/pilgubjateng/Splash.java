@@ -6,19 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class Splash extends AppCompatActivity {
 
-    public ImageView iv;
+    public LinearLayout linearSplash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        iv = (ImageView) findViewById(R.id.iv);
+        linearSplash = (LinearLayout) findViewById(R.id.linearSplash);
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.welcome_transisi);
 
-        iv.startAnimation(myanim);
+        linearSplash.startAnimation(myanim);
         final Intent i = new Intent(this,SignIn.class);
         Thread timer = new Thread()
         {

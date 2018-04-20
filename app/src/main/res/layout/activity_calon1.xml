@@ -34,12 +34,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/calon" />
-
-                    <Button
+                        android:src="@drawable/ganjar" />
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Details" />
+                        android:text="@string/ganjar"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_margin="8dp"
+                        />
+                    <Button
+                        android:id="@+id/btnDetailGanjar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        style="@style/Widget.AppCompat.Button.Colored"/>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -59,12 +70,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/calon" />
-
-                    <Button
+                        android:src="@drawable/taj" />
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Details" />
+                        android:text="@string/taj"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_horizontal_margin"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_margin="9dp"
+                        />
+                    <Button
+                        android:id="@+id/btnDetailTaj"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        />
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>

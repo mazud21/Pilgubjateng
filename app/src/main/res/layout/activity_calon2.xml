@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,250 +8,178 @@
     android:orientation="vertical"
     tools:context="com.pilgubjateng.battistrada.pilgubjateng.Calon">
 
-    <android.support.v4.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="346dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/sudirman" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sudirman"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_horizontal_margin"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_margin="8dp"
+                        />
+                    <Button
+                        android:id="@+id/btnDetailSudirman"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        style="@style/Widget.AppCompat.Button.Colored"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ida" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ida"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_horizontal_margin"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_margin="9dp"
+                        />
+                    <Button
+                        android:id="@+id/btnDetailIda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        style="@style/Widget.AppCompat.Button.Colored"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_nama_paslon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="NAMA PASLON"
+                    android:layout_margin="8dp"
+                    android:text="JUMLAH PEMILIH"
                     android:textColor="#000000"
-                    android:textSize="24sp" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/img_paslon"
+                <SeekBar
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/calon" />
+                    android:layout_height="match_parent" />
 
-                <TextView
-                    android:id="@+id/tv_biografi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Biografi"
-                    android:textColor="#000000"
-                    android:textSize="24sp"
-
-                    />
-
-                <RelativeLayout
-                    android:id="@+id/relative_cagub"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@id/tv_biografi_detail">
-
-                    <TextView
-                        android:id="@+id/tv_biografi_detail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Calon Gubernur"
-                        android:textColor="#000000"
-                        android:textSize="22sp"
-                        android:textStyle="bold"
-
-                        />
-
-                    <ImageView
-                        android:id="@+id/icon_person"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_biografi_detail"
-                        android:layout_margin="8dp"
-                        android:src="@drawable/ic_person_black_24dp" />
-
-                    <TextView
-                        android:id="@+id/txt_profil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_biografi_detail"
-                        android:layout_margin="8dp"
-                        android:layout_toRightOf="@id/icon_person"
-                        android:text="Profil"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@id/txt_profil"
-                        android:layout_toRightOf="@id/icon_person"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/txt_nama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Nama"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/txt_tempatLahir"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Tempat Lahir"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/txt_tglLahir"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Tanggal Lahir"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tx_alamat"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Alamat"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/txt_agama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Agama"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/txt_pekerjaan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Pekerjaan"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/txt_pendidikan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Pendidikan"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@id/relative_cagub">
-
-                    <TextView
-                        android:id="@+id/wtv_biografi_detail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Calon Wakil Gubernur"
-                        android:textColor="#000000"
-                        android:textSize="22sp"
-                        android:textStyle="bold"
-
-                        />
-
-                    <ImageView
-                        android:id="@+id/wicon_person"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/wtv_biografi_detail"
-                        android:layout_margin="8dp"
-                        android:src="@drawable/ic_person_black_24dp" />
-
-                    <TextView
-                        android:id="@+id/wtxt_profil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/wtv_biografi_detail"
-                        android:layout_margin="8dp"
-                        android:layout_toRightOf="@id/wicon_person"
-                        android:text="Profil"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@id/wtxt_profil"
-                        android:layout_toRightOf="@id/wicon_person"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/wtxt_nama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Nama"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/wtxt_tempatLahir"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Tempat Lahir"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/wtxt_tglLahir"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Tanggal Lahir"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/wtx_alamat"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Alamat"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/wtxt_agama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Agama"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/wtxt_pekerjaan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Pekerjaan"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/wtxt_pendidikan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Pendidikan"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                </RelativeLayout>
             </LinearLayout>
+
         </android.support.v7.widget.CardView>
-    </android.support.v4.widget.NestedScrollView>
-</LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="ASPIRASI MASYARAKAT"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/newsImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        style="@style/TextAppearance.AppCompat.Headline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignBottom="@+id/newsImage"
+                        android:padding="8dp"
+                        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+                    <TextView
+                        android:id="@+id/newsTitle"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/newsImage"
+
+                        android:padding="8dp"
+                        android:textColor="?android:textColorSecondary" />
+
+                    <TextView
+                        android:id="@+id/subTitle"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@id/newsTitle"
+                        android:padding="8dp" />
+                </RelativeLayout>
+
+            </ScrollView>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

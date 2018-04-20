@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Pilgub Jateng</string>
 
+    <!--menu-->
+    <string name="calon">Cagub Cawagub</string>
+    <string name="news">Berita Pilkada</string>
+    <string name="aspirasi">Aspirasi</string>
+    <string name="memilih">Cara Memilih</string>
+    <string name="statistik">Hasil Statistik</string>
+    <string name="about">Tentang Aplikasi</string>
+    <!--end menu-->
+
     <string-array name="sports_titles">
         <item>Baseball</item>
     </string-array>

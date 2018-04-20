@@ -6,12 +6,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.ImageView;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,7 +21,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView imageView1, imageView2, imageView3, imageView4;
+    CardView cardView1, cardView2, cardView3, cardView4, cardView5, cardView6;
     //Button buttonVote;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
@@ -48,40 +47,56 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        imageView1 = (ImageView) findViewById(R.id.calon);
-        imageView2 = (ImageView) findViewById(R.id.cara);
-        imageView3 = (ImageView) findViewById(R.id.issue);
-        imageView4 = (ImageView) findViewById(R.id.ask);
+        cardView1 = (CardView)findViewById(R.id.cv_calon);
+        cardView2 = (CardView)findViewById(R.id.cv_news);
+        cardView3 = (CardView)findViewById(R.id.cv_memilih);
+        cardView4 = (CardView)findViewById(R.id.cv_aspirasi);
+        cardView5 = (CardView)findViewById(R.id.cv_isu);
+        cardView6 = (CardView)findViewById(R.id.cv_about);
         //buttonVote = (Button)findViewById(R.id.btnVote);
 
         //init
         auth = FirebaseAuth.getInstance();
 
-        imageView1.setOnClickListener(new View.OnClickListener() {
+        cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Calon.class);
                 startActivity(intent);
             }
         });
-        imageView2.setOnClickListener(new View.OnClickListener() {
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, News.class);
+                startActivity(intent);
+            }
+        });
+        cardView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, CaraMemilih.class);
                 startActivity(intent);
             }
         });
-        imageView3.setOnClickListener(new View.OnClickListener() {
+        cardView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Aspirasi.class);
                 startActivity(intent);
             }
         });
-        imageView4.setOnClickListener(new View.OnClickListener() {
+        cardView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, News.class);
+                Intent intent = new Intent(MainActivity.this, Isu.class);
+                startActivity(intent);
+            }
+        });
+        cardView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, About.class);
                 startActivity(intent);
             }
         });
