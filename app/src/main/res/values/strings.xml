@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Pilgub Jateng</string>
+    <string name="app_name">KPU Mobile Jateng</string>
 
     <!--menu-->
     <string name="calon">Cagub Cawagub</string>
     <string name="news">Berita Pilkada</string>
     <string name="aspirasi">Aspirasi</string>
-    <string name="memilih">Cara Memilih</string>
+    <string name="edukasi">Edukasi</string>
     <string name="statistik">Hasil Statistik</string>
     <string name="about">Tentang Aplikasi</string>
     <!--end menu-->
@@ -27,5 +27,119 @@
     <string name="start">MULAI</string>
 
     <!-- Strings related to login & Register -->
+
+    <!--Visi Misi Program Ganjar-->
+    <string name="visi_ganjar">
+        Menuju Jawa Tengah Sejahtera dan Berdikari: Mboten Korupsi, Mboten Ngapusi
+    </string>
+    <string name="misi1_ganjar">
+        l. Menempatkan rakyat (petani, nelayan, pelaku usaha mikro dan kecil serta
+rakyat pekerja ) sebagai subyek dalam proses pengambilan keputusan dan
+penentuan arah pembangunan serta memperkuat akses rakyat terhadap
+sumberdaya politik, ekonomi sosial dan budaya.
+    </string>
+    <string name="misi2_ganjar">
+        2. Memperkuat penyelengara pemerintahan yang bersih, iu1ur, transparan demi
+terjaminnya sistem pelayanan publik untuk memenuhi kebutuhan dasar rakyat,
+terciptanya relasi sosial yang aman dan tidak diskrinimatif.
+    </string>
+    <string name="misi3_ganjar">
+        3. Menyelenggarakan program-program pembangunan yang menjamrn
+terwujudnya kesejahteraan rakyat melalui sinergitas kerja dan gotong royong
+para pemangku kepentingan.
+    </string>
+    <string name="program1_ganjar">
+        1. Pendidikan politik dan pemberdayaan Masyarakat
+Menanamkan nilai-nilai spiritual dan kebangsaan melalui pendidikan, pelatihan
+dan pendampingan masyarakat
+    </string>
+    <string name="program2_ganjar">
+        2. Reformasi Birokrasi
+Mengkonsolidasikan dan menyinergikan seluruh kekuatan Satuan Kerja
+Perangkat Daerah melalui sistim pelayanan yang berpihak pada kepentingan
+publik
+    </string>
+    <string name="program3_ganjar">
+        3. Peningkatan Kesejahteraan Masyarakat
+Terpenuhinya kebutuhan hidup dasar warga dan terciptanya relasi sosial yang
+aman dan tidak diskriminatif melalui kerjasama kemitraan, investasi,
+pemberian bantuan dan gotong royong semua pemangku kepentingan
+    </string>
+    <string name="program4_ganjar">
+        4. Peningkatan pembangunan lnfrastruktur
+Pengembangan infrastruktur sosial, ekonomi, politik dan kebudayaan dengan
+menjaga, memelihara dan meningkatkan kualitas dan kuantitas infrastruktur
+    </string>
+    <string name="program5_ganjar">
+        5. Peningkatan kualitas lingkungan hidup dan energi
+Menjamin keberlangsungan hidup manusia dan sumberdaya alam yang aman
+dan berkelanjutan melalui pengembangan teknologi ramah lingkungan,
+konservasi alam dan ekosistem, pengurangan resiko bencana,
+mengembangkan pemanfaatan energi baru terbarukan
+    </string>
+    <string name="program6_ganjar">
+        6. Pengembangan Kebudayaan
+Mengembangkan nilai-nilai dan menguatkan identitas kebudayaan Jawa
+Tengah melalui pengakuan keragaman budaya dan memfasilitasi ruang-ruang
+ekspresi dan kreasi berbagai budaya yang hidup di masyarakat.
+    </string>
+    <!--end visi misi-->
+
+    <!--Visi Misi Program Sudirman-->
+    <string name="visi_sudirman">
+        Mbangun lateng Mukti Bareng mencapai
+kehidupan warga Jawa Tengah yang Adil, Sejahtera, I4aju dan Beradab
+    </string>
+    <string name="misi1_sudirman">
+        1. Mewujudkan pemerataan hasil-hasil pembangunan, mengurangi
+kesenjangan.
+    </string>
+    <string name="misi2_sudirman">
+        2, Memperkuat partisipasi warga dalam pembangunan, membangun sebagai gerakan.
+    </string>
+    <string name="misi3_sudirman">
+        3. Menjaga keberlanjutan, memelihara keseimbangan lingkungan'
+    </string>
+    <string name="program1_sudirman">
+        1. Membangun kredibilitas Pemerintahan dengan meningkatkan tata kelola,
+integritas, dan kompetensi SKPD dan seluruh Jajaran Kepemimpinan'
+    </string>
+    <string name="program2_sudirman">
+        2. Mendorong dan memfasilitasi tumbuhnya kader-kader pemimpin di tiga
+sektor; pemerintah, bisnis, dan gerakan masyarakat sipil
+    </string>
+    <string name="program3_sudirman">
+        3. Membangun pendidikan berbasis karakter, pendidikan keahlian dan vokasi
+untuk menumbuhkan bakat-bakat terbaik di bidang keterampilan teknis'
+kepemimpinan, dan kewirausahaan
+    </string>
+    <string name="program4_sudirman">
+        4. Mendorong pembangunan berbasis partisipasi warga, dengan melibatkan
+seluas mungkin pemangku kepentingan dalam bidang; usaha, kebudayaan'
+konservasi lingkungan, dan kepariwisataan'
+    </string>
+    <string name="program5_sudirman">
+        5. Mengejar ketertinggalan pembangunan sumber daya manusia\' dengan
+meningkatkan derajat kesehatan dan kesejahteraan termasuk didalamnya
+perempuan, anak dan defabel
+    </string>
+    <string name="program6_sudirman">
+        6. Meningkatkan ketahanan keluarga melalui pemberdayaan perempuan guna
+menjaga kualitas generasi penerus.
+    </string>
+    <string name="program7_sudirman">
+        7. Melakukan akselerasi pertumbuhan ekonomi dengan meningkatkan
+Pendapatan Asli Daerah (PAD), mendorong peran Anggaran Belanja dan
+Pendapatan Daerah (APBD) dan melibatkan investasi BUMD dan Swasta.
+    </string>
+    <string name="program8_sudirman">
+        8. Mempercepat konektivitas antar wilayah dengan infrastruktur transpoftasi,
+energi dan teknologi.
+    </string>
+    <string name="program9_sudirman">
+        9. Memajukan kualitas kehidupan nelayan, petani, industri agro dan Usaha
+Mikro Kecil dan Menengah (UMKM).
+    </string>
+    <!--end visi misi-->
 
 </resources>

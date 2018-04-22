@@ -5,9 +5,6 @@
         android:id="@+id/profile_more"
         android:title="Profile"/>
     <item
-        android:id="@+id/about_more"
-        android:title="About"/>
-    <item
         android:id="@+id/logout_more"
         android:title="Logout"/>
 </menu>

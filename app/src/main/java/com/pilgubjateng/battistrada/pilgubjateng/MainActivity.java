@@ -2,8 +2,10 @@ package com.pilgubjateng.battistrada.pilgubjateng;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -14,10 +16,16 @@ import android.widget.PopupMenu;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.pilgubjateng.battistrada.pilgubjateng.adapter.AdapterImage;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import me.relex.circleindicator.CircleIndicator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private FirebaseUser user;
+
+    private static ViewPager mPager;
+    private static int currentPage = 0;
+    private static final Integer[] XMEN= {R.drawable.slider1,R.drawable.slider2,R.drawable.slider3};
+    private ArrayList<Integer> XMENArray = new ArrayList<Integer>();
 
     @Override
     public void onBackPressed() {
@@ -75,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         cardView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CaraMemilih.class);
+                Intent intent = new Intent(MainActivity.this, Edukasi.class);
                 startActivity(intent);
             }
         });
@@ -89,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         cardView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Isu.class);
+                Intent intent = new Intent(MainActivity.this, Statistik.class);
                 startActivity(intent);
             }
         });
@@ -136,10 +149,6 @@ public class MainActivity extends AppCompatActivity {
                                         Intent intentProfile = new Intent(MainActivity.this, Profile.class);
                                         startActivity(intentProfile);
                                         break;
-                                    case R.id.about_more:
-                                        Intent intentAbout = new Intent(MainActivity.this, About.class);
-                                        startActivity(intentAbout);
-                                        break;
                                     case R.id.logout_more:
                                         auth.signOut();
                                         if (auth.getCurrentUser() == null) {
@@ -159,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        init();
     }
 
     //datepicker class
@@ -185,5 +195,34 @@ public class MainActivity extends AppCompatActivity {
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
         datePickerDialog.show();
+    }
+
+    private void init() {
+        for(int i=0;i<XMEN.length;i++)
+            XMENArray.add(XMEN[i]);
+
+        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager.setAdapter(new AdapterImage(MainActivity.this,XMENArray));
+        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
+        indicator.setViewPager(mPager);
+
+        // Auto start of viewpager
+        final Handler handler = new Handler();
+        final Runnable Update = new Runnable() {
+            public void run() {
+                if (currentPage == XMEN.length) {
+                    currentPage = 0;
+                }
+                mPager.setCurrentItem(currentPage++, true);
+            }
+        };
+
+        Timer swipeTimer = new Timer();
+        swipeTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(Update);
+            }
+        }, 10000, 5000);
     }
 }

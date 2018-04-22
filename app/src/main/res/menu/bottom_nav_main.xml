@@ -19,6 +19,6 @@
         android:id="@+id/more"
         android:enabled="true"
         android:icon="@drawable/ic_more_vert_black_24dp"
-        android:title="Profile"
+        android:title="More"
         app1:showAsAction="ifRoom"/>
 </menu>

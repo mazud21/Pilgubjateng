@@ -3,13 +3,13 @@ package com.pilgubjateng.battistrada.pilgubjateng;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class InfoLanjut extends AppCompatActivity {
+public class Statistik extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_lanjut);
+        setContentView(R.layout.activity_statistik);
 
-        setTitle("Informasi Lainnya");
+        setTitle("Hasil Statistik");
     }
 }
